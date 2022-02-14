@@ -1,0 +1,44 @@
+.carousel .switchLeft,
+.carousel .switchRight {
+  border-radius: 50%;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  background-color: white;
+  font-family: sans-serif;
+  top: 0;
+}
+.carousel .switchLeft {
+  position: absolute;
+  left: -50px;
+  top: 60%;
+}
+.carousel .switchRight {
+  position: absolute;
+  right: -60px;
+  top: 60%;
+}
+@media (max-width: 600px) {
+  .carousel .switchRight {
+    background-color: transparent;
+    top: 60%;
+    right: -30px;
+  }
+  .carousel .switchLeft {
+    background-color: transparent;
+    top: 60%;
+    left: -30px;
+  }
+  .carousel .switchLeft img,
+  .carousel .switchRight img {
+    width: 26px;
+  }
+}
+
+.carousel .switchLeft img,
+.carousel .switchRight img {
+  pointer-events: none;
+}

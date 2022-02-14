@@ -1,0 +1,64 @@
+.carousel {
+  height: 300px;
+  width: 80%;
+  position: relative;
+}
+.carousel:hover .carousel-title--container span {
+  visibility: visible;
+}
+.carousel-title--container {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  bottom: 220px;
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.carousel-title--hidden-element {
+  opacity: 0;
+  font-size: small;
+  transform: translateX(-20px);
+}
+.carousel-title--container span {
+  transform: translateX(-50px);
+  visibility: hidden;
+}
+.carousel-title--container:hover span {
+  transform: translateX(40px);
+  opacity: 0.6;
+  transition: transform 0.3s ease-out, opacity 1s;
+}
+
+.carousel-title--container:hover .carousel-title--hidden-element {
+  opacity: 0.6;
+  transform: translateX(20px);
+  transition: transform 0.5s ease-out, opacity 0.5s ease 0.1s;
+}
+.carousel-title a {
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+}
+@media (max-width: 600px) {
+  .carousel-title a {
+    font-size: 16px;
+  }
+  .carousel-title--container span {
+    font-size: 12px;
+  }
+}
+
+.carouselbox {
+  height: 400px;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  justify-content: flex-start;
+}

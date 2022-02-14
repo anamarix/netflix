@@ -1,0 +1,86 @@
+header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  z-index: 4;
+  background-color: rgb(38, 38, 38);
+  /* border-bottom: 3px rgb(255, 215, 0, 0.4) inset; */
+  justify-content: space-between;
+  align-items: flex-end;
+  position: sticky;
+  top: 0;
+  padding: 16px 10%;
+  -webkit-box-shadow: inset 0px -9px 100px -49px rgba(6, 0, 0, 1);
+  -moz-box-shadow: inset 0px -9px 100px -49px rgba(6, 0, 0, 1);
+  box-shadow: inset 0px -9px 100px -49px rgba(6, 0, 0, 1);
+}
+
+header li {
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+  padding: 0px 20px;
+  cursor: pointer;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+header li:nth-child(2) {
+  padding-right: 0;
+}
+
+header li a:hover {
+  color: rgba(245, 245, 245, 0.4);
+}
+header ul {
+  list-style: none;
+}
+
+header nav img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 12px;
+  transition: all 0.3s ease 0s;
+}
+header nav img:hover {
+  opacity: 0.5;
+}
+header nav input {
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: none;
+  display: none;
+}
+header nav input:focus-visible {
+  outline: none;
+}
+
+.input-visible {
+  transform: translateX(0px);
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  header {
+    justify-items: space-between;
+    padding: 16px 5%;
+  }
+  header > img {
+    display: none;
+  }
+  header nav input {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 400px) {
+  header nav img {
+    display: none;
+  }
+  header nav input {
+    width: 125px;
+  }
+}
