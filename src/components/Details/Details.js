@@ -18,7 +18,7 @@ const dispatch = useDispatch();
   const element = popularMovies.find((el) => el.id === elementNumber) || upcomingMovies.find((el) => el.id === elementNumber) || favMovies.find((el) => el.id === elementNumber)
 
 const favoritesHandler = () => {
-favMovies.some(el=> el.id==element.id)? dispatch(removeFromFavorites(element)) : dispatch(addToFavorites(element))
+favMovies.some(el=> el.id===element.id)? dispatch(removeFromFavorites(element)) : dispatch(addToFavorites(element))
 
 };
 const propagationHandler = (e) => {
@@ -26,11 +26,11 @@ e.stopPropagation();
 };
 
 const favoritesImageHandler = () => {
-  return favMovies.some(el=> el.id==element.id)?checked:add
+  return favMovies.some(el=> el.id===element.id)?checked:add
 }
 
 const favoritesToolTipHandler = () => {
-  return favMovies.some(el=> el.id==element.id)?"Remove from favorites" : "Add to favorites"
+  return favMovies.some(el=> el.id===element.id)?"Remove from favorites" : "Add to favorites"
 }
 
   const renderDetails = () => {
@@ -41,20 +41,21 @@ const favoritesToolTipHandler = () => {
         
         <img
           src={`https://image.tmdb.org/t/p/w185/${element.poster_path}`}
+          alt="movie poster"
         ></img>
         <div className="element-bottons">
           
           <div className="element-play-container">
-            <img src={play} />
+            <img src={play} alt="play button"/>
           </div>
           <div className="element-add-container" data-title={favoritesToolTipHandler()} onClick={()=>favoritesHandler()}>
-            <img src={favoritesImageHandler()} />
+            <img src={favoritesImageHandler()} alt="add to favorites button" />
           </div>
         </div>
 
         <div className="element-title">
           <span>{element.title}</span>
-          <span className="element-star-container"><img src={star} /></span>
+          <span className="element-star-container"><img src={star} alt="star symbol" /></span>
           <span>{element.vote_average}</span>
         </div>
         <div>{element.overview}</div>

@@ -31,7 +31,8 @@ function App() {
   const favoriteMovies = useSelector(state=> state.favMovies);
   const openedModal = useSelector(state=>state.modal);
   const genres = useSelector((state) => state.genres);
-  const loading = useSelector(state=>state.loading);
+  const loadingPopularMovies = useSelector(state=>state.loadingPopularMovies);
+  const loadingUpcomingMovies = useSelector(state=>state.loadingUpcomingMovies);
   const errorPopularMovies = useSelector(state=>state.errorPopularMovies);
   const errorUpcomingMovies = useSelector(state=>state.errorUpcomingMovies)
   const [scrollAmount, setAmount] = React.useState(0);
@@ -206,9 +207,9 @@ function App() {
       <div className="netflix-logo">
         <Link to="/"><img src={logo} alt="logo" /></Link>
       </div>
-      {loading && <Spinner/>}
+      {(loadingPopularMovies || loadingUpcomingMovies) && <Spinner/>}
       {(errorPopularMovies || errorUpcomingMovies) && <Fatal message={errorPopularMovies || errorUpcomingMovies}/>}
-      {(!errorPopularMovies && !errorUpcomingMovies) && (
+      {(!errorPopularMovies && !errorUpcomingMovies && !loadingPopularMovies && !loadingUpcomingMovies) && (
       <Routes>
       <Route path="/" element={
         <React.Fragment>

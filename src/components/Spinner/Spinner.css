@@ -33,7 +33,8 @@
     transform: rotate(360deg);
   }
 }
-.center {
+div.center {
   position: absolute;
   text-align: center;
+  top:300px;
 }

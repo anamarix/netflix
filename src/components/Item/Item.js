@@ -16,7 +16,7 @@ function Item(props) {
 
   return (
     <div className="item-container">
-      <div className="item-logo"><img id="logo-n"src={n}/></div>
+      <div className="item-logo"><img id="logo-n" alt="small logo"src={n}/></div>
       <img
         className={props.className}
         id={props.id}
